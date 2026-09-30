@@ -132,7 +132,7 @@ body{font-family:var(--font-cn);background:var(--bg-page);color:var(--text);min-
 <body>
 <div class="app">
   <div class="header">
-    <div class="brand"><div class="logo">遨</div><div class="brand-text"><h1>遨海百词斩</h1><p>海事通信 · 45词 · AT-B20系列</p></div></div>
+  <div class="brand"><div class="logo">遨</div><div class="brand-text"><h1>遨海百词斩</h1><p>海事通信 · 85词 · AT-B20系列</p></div></div>
     <div class="header-stats"><span><span class="dot g"></span> 已掌握 <b id="hdr-known">0</b></span><span><span class="dot r"></span> 待复习 <b id="hdr-unknown">0</b></span></div>
   </div>
   <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
@@ -148,7 +148,7 @@ body{font-family:var(--font-cn);background:var(--bg-page);color:var(--text);min-
       <div id="card-front"><span class="card-badge" id="c-badge">协议标准</span><h2 class="card-cn" id="c-cn">AIS</h2><p class="card-en" id="c-en">AIS</p><p class="card-fullname" id="c-full">Automatic Identification System</p><p class="card-hint">点击卡片翻面 →</p></div>
       <div class="card-back" id="card-back"><div class="detail-section"><div class="detail-label">中文全称</div><div class="detail-content" id="b-cnfull"></div></div><div class="detail-section"><div class="detail-label">释义</div><div class="detail-content" id="b-def"></div></div><div class="detail-section"><div class="detail-label">使用场景</div><div class="detail-content" id="b-scene"></div></div><div class="detail-section"><div class="detail-label">相关产品</div><span class="detail-module" id="b-module"></span></div></div>
     </div>
-    <div class="card-counter" id="card-counter">1 / 45</div>
+    <div class="card-counter" id="card-counter">1 / 85</div>
     <div class="card-nav"><button class="nav-btn" id="prev-btn">&larr; 上一个</button><button class="nav-btn" id="next-btn">下一个 &rarr;</button></div>
     <div class="mastery-row"><button class="m-btn unknown" id="mark-unknown">&#10007; 不熟</button><button class="m-btn known" id="mark-known">&#10003; 已掌握</button></div>
   </div>
@@ -163,7 +163,7 @@ body{font-family:var(--font-cn);background:var(--bg-page);color:var(--text);min-
     <div class="daily-list" id="daily-list"></div><div class="daily-note">点击词条跳转到翻卡详情</div>
   </div>
   <div class="view" id="view-mastery">
-    <div class="m-tabs"><button class="m-tab active" data-filter="unknown">待复习 <span id="cnt-unknown">(0)</span></button><button class="m-tab" data-filter="new">未学 <span id="cnt-new">(45)</span></button><button class="m-tab" data-filter="known">已掌握 <span id="cnt-known">(0)</span></button></div>
+    <div class="m-tabs"><button class="m-tab active" data-filter="unknown">待复习 <span id="cnt-unknown">(0)</span></button><button class="m-tab" data-filter="new">未学 <span id="cnt-new">(85)</span></button><button class="m-tab" data-filter="known">已掌握 <span id="cnt-known">(0)</span></button></div>
     <div class="m-list" id="mastery-list"></div>
   </div>
   <div class="footer">遨海百词斩 · 词库基于 AT-B20 VDES & AT-B20A AIS 基站产品资料<br>学习进度自动保存在浏览器本地</div>
@@ -215,10 +215,50 @@ const V=[
 {id:42,cat:"硬件接口",cn:"TNC-K接口",en:"TNC-K",full:"TNC-K Antenna Connector",cnF:"TNC-K型天线接口",def:"螺纹锁紧式射频同轴连接器,频率可达11GHz,常用于GNSS天线连接。",sc:"AT-B20系列GNSS天线接口采用TNC-K型。",mod:"AT-B20A / AT-B20"},
 {id:43,cat:"硬件接口",cn:"2U机架",en:"2U Rack",full:"2U 19-inch Rack-mounted",cnF:"2U 19英寸机架式安装",def:"工业标准机柜安装规格,1U=44.45mm高,2U即88.9mm高,便于机房集成。",sc:"AT-B20系列采用19英寸机架安装,高度2U。",mod:"AT-B20A / AT-B20"},
 {id:44,cat:"硬件接口",cn:"双电源",en:"Dual Power",full:"Dual AC/DC Power Supply",cnF:"交流/直流双电源",def:"同时支持AC和DC两路供电,主电源故障时自动切换备用电源。",sc:"AT-B20系列支持AC 220V和DC 12~36V双电源自动切换。",mod:"AT-B20A / AT-B20"},
-{id:45,cat:"硬件接口",cn:"TCP/IP配置",en:"TCP/IP Config",full:"Local and Remote Configuration via TCP/IP",cnF:"TCP/IP网络配置",def:"通过TCP/IP网络对设备进行本地或远程配置管理和状态监测。",sc:"AT-B20系列支持TCP/IP网络配置监测。",mod:"AT-B20A / AT-B20"}
+{id:45,cat:"硬件接口",cn:"TCP/IP配置",en:"TCP/IP Config",full:"Local and Remote Configuration via TCP/IP",cnF:"TCP/IP网络配置",def:"通过TCP/IP网络对设备进行本地或远程配置管理和状态监测。",sc:"AT-B20系列支持TCP/IP网络配置监测。",mod:"AT-B20A / AT-B20"},
+{id:46,cat:"业务术语",cn:"海域监管",en:"Maritime Domain Monitoring",full:"Maritime Domain Awareness",cnF:"海域综合监管",def:"面向海域范围开展船舶、航行、环境和安全信息的综合监测与管理。",sc:"海事部门通过平台融合AIS、雷达、视频、气象和水文数据,形成海域监管态势图。",mod:"海域监管数智平台"},
+{id:47,cat:"业务术语",cn:"船舶跟踪",en:"Vessel Tracking",full:"Vessel Tracking",cnF:"船舶位置与轨迹跟踪",def:"持续获取并分析船舶的位置、航向、航速和航行轨迹。",sc:"平台根据AIS或雷达信息跟踪重点船舶,支持历史轨迹回放和异常行为分析。",mod:"海域监管数智平台 / ECDIS电子海图 / 航海雷达"},
+{id:48,cat:"业务术语",cn:"数据接入",en:"Data Integration / Data Ingestion",full:"Data Integration / Data Ingestion",cnF:"多源数据统一接入",def:"将来自不同设备、系统或数据源的信息接入统一平台并进行标准化处理。",sc:"项目实施时接入AIS、VHF、雷达、北斗、CCTV和水文气象等多源数据。",mod:"海域监管数智平台 / VDES/AIS基站管理系统"},
+{id:49,cat:"业务术语",cn:"接口",en:"Interface / API",full:"Application Programming Interface",cnF:"系统数据交换接口",def:"用于不同软件、设备或系统之间进行数据交换和功能调用的连接规范。",sc:"通过标准接口将基站状态、AIS报文和告警信息对接至客户现有系统。",mod:"VDES/AIS基站 / 海域监管数智平台"},
+{id:50,cat:"业务术语",cn:"系统集成",en:"System Integration",full:"System Integration",cnF:"系统集成",def:"将多个设备、软件和数据系统组合为能够协同运行的整体解决方案。",sc:"在港口或海事项目中集成基站、管理平台、雷达、视频和指挥系统。",mod:"全系列产品"},
+{id:51,cat:"业务术语",cn:"本地化部署",en:"Local Deployment",full:"On-premises Deployment",cnF:"客户本地部署",def:"将系统部署在客户本地机房或指定网络环境中运行。",sc:"涉密或对数据自主可控有要求的客户,可采用本地化部署方式建设平台。",mod:"海域监管数智平台 / VDES/AIS基站管理系统"},
+{id:52,cat:"业务术语",cn:"项目实施",en:"Project Implementation",full:"Project Implementation",cnF:"项目落地实施",def:"围绕方案落地开展的安装、配置、联调、培训和验收工作。",sc:"基站到货后完成设备安装、网络配置、链路联调、用户培训和项目验收。",mod:"全系列产品"},
+{id:53,cat:"业务术语",cn:"技术支持",en:"Technical Support",full:"Technical Support",cnF:"技术支持服务",def:"为客户提供产品使用、故障排查、配置优化和技术咨询服务。",sc:"项目运行期间,技术支持人员协助客户定位通信链路、设备状态或软件配置问题。",mod:"全系列产品"},
+{id:54,cat:"业务术语",cn:"售后服务",en:"After-sales Service",full:"After-sales Service",cnF:"交付后的持续服务",def:"产品交付后的维护、升级、维修、培训和持续服务。",sc:"通过远程支持、现场服务和软件升级保障海事通信系统长期稳定运行。",mod:"全系列产品"},
+{id:55,cat:"业务术语",cn:"试点项目",en:"Pilot Project",full:"Pilot Project",cnF:"示范验证项目",def:"在正式大规模部署前,用于验证方案可行性和实际效果的示范项目。",sc:"先在一个港区或重点航段部署少量基站,验证覆盖、数据接入和业务应用效果。",mod:"AT-B20 / AT-B10A / 海域监管数智平台"},
+{id:56,cat:"业务术语",cn:"应用场景",en:"Use Case / Application Scenario",full:"Use Case / Application Scenario",cnF:"产品业务应用场景",def:"产品或解决方案实际发挥作用的业务环境和使用方式。",sc:"根据港口管理、海事监管、渔业监管或航运服务等应用场景设计配置方案。",mod:"全系列产品"},
+{id:57,cat:"业务术语",cn:"航程优化",en:"Voyage Optimisation",full:"Voyage Optimisation",cnF:"航行计划优化",def:"基于船舶、航线、气象和交通信息优化航行路线与运行计划。",sc:"平台结合航行数据和海域态势,为船舶或调度人员提供航线优化参考。",mod:"海域监管数智平台 / ECDIS电子海图"},
+{id:58,cat:"业务术语",cn:"船舶性能",en:"Vessel Performance",full:"Vessel Performance",cnF:"船舶运行性能",def:"反映船舶航行效率、能耗、速度和运行状态的综合指标。",sc:"基于船舶轨迹、速度和航程数据分析船舶运行效率与性能变化。",mod:"海域监管数智平台"},
+{id:59,cat:"业务术语",cn:"AIS断报",en:"AIS Gap / Non-reporting Period",full:"AIS Gap / Non-reporting Period",cnF:"AIS信息中断",def:"船舶AIS信息在一段时间内未被接收或未能持续上报的现象。",sc:"平台识别AIS断报区间并结合雷达或视频数据辅助判断船舶是否存在异常。",mod:"海域监管数智平台 / AT-B20A"},
+{id:60,cat:"业务术语",cn:"欺骗性广播",en:"Spoofing / Deceptive Broadcasting",full:"Spoofing / Deceptive Broadcasting",cnF:"伪造或异常信息播发",def:"通过伪造、篡改或异常播发身份与位置等信息误导接收系统的行为。",sc:"海事监管平台对异常身份、位置跳变和不合理航迹进行分析,辅助识别欺骗性广播。",mod:"海域监管数智平台 / VDES/AIS基站"},
+{id:61,cat:"业务术语",cn:"海事设备商",en:"Maritime Equipment Supplier",full:"Maritime Equipment Supplier",cnF:"海事设备供应商",def:"为海事、航运、港口或船舶客户提供专用设备和配套服务的企业。",sc:"遨海可与船舶设备商协作,将基站、船台或导航设备集成到整体方案中。",mod:"全系列产品"},
+{id:62,cat:"业务术语",cn:"系统集成商",en:"System Integrator",full:"System Integrator",cnF:"系统集成合作方",def:"负责将多类设备、软件和网络系统集成为完整项目方案的企业。",sc:"系统集成商可将遨海基站与客户已有的指挥、调度或数据平台进行集成。",mod:"全系列产品"},
+{id:63,cat:"业务术语",cn:"本地渠道商",en:"Local Distributor",full:"Local Distributor",cnF:"区域渠道合作伙伴",def:"在特定地区负责产品推广、销售、交付和客户服务的合作伙伴。",sc:"通过本地渠道商拓展港口、海事、渔业和航运客户,并提供区域服务支持。",mod:"全系列产品"},
+{id:64,cat:"产品型号",cn:"AIS标准基站",en:"AIS Standard Base Station",full:"AIS Standard Base Station",cnF:"AIS标准岸基设备",def:"用于接收和发送AIS信息的标准岸基设备,面向常规AIS岸基通信和监管场景。",sc:"部署在港口、海事监管站或沿海岸线,接收船舶AIS信息并提供岸基覆盖。",mod:"AT-B10A"},
+{id:65,cat:"产品型号",cn:"AIS增强基站",en:"AIS Enhanced Base Station",full:"AIS Enhanced Base Station",cnF:"AIS增强型岸基设备",def:"在标准AIS能力基础上增强通信、接口或业务处理能力的岸基设备。",sc:"适用于需要ASM业务、更多接口或更高可靠性的港口和海事监管项目。",mod:"AT-B10AE"},
+{id:66,cat:"产品型号",cn:"AIS超视距基站",en:"Long-range AIS Base Station",full:"Long-range AIS Base Station",cnF:"远距离AIS岸基设备",def:"面向更大范围AIS信号接收和远距离监测的岸基设备。",sc:"用于远距离海域监测、弱信号检测和大范围船舶态势感知。",mod:"AT-B10AG"},
+{id:67,cat:"产品型号",cn:"VDES卫星载荷",en:"VDES Satellite Payload",full:"VDES Satellite Payload",cnF:"VDES卫星通信载荷",def:"搭载于卫星平台、用于支持VDES空间段通信和数据交换的载荷设备。",sc:"面向卫星通信、全球覆盖和VDES空间段业务开展数据播发与接收。",mod:"AT-S30"},
+{id:68,cat:"产品型号",cn:"VDES船台",en:"VDES Shipborne Station",full:"VDES Shipborne Station",cnF:"VDES船载通信终端",def:"安装在船舶上的VDES/AIS综合通信终端。",sc:"支持船舶进行AIS、ASM、VDE和VDE-SAT通信,并提供导航与态势感知能力。",mod:"AT-V20"},
+{id:69,cat:"产品型号",cn:"自动化测试系统",en:"Automated Test System",full:"VDES/AIS Automated Test System",cnF:"VDES/AIS自动化测试系统",def:"通过软件和测试设备对VDES/AIS产品进行自动化、批量化和可追溯测试的系统。",sc:"用于基站、卫星载荷和船载终端的研发验证、生产测试与质量检验。",mod:"AY-T20"},
+{id:70,cat:"产品型号",cn:"海域监管数智平台",en:"Smart Maritime Domain Supervision Platform",full:"Smart Maritime Domain Supervision Platform",cnF:"海域监管数智平台",def:"融合AIS、雷达、VHF、CCTV、水文气象和标准水要素等多源数据的海域监管平台。",sc:"为海事、港口、渔业和航运管理提供态势感知、统计分析、告警和作业管理。",mod:"海域监管数智平台"},
+{id:71,cat:"产品型号",cn:"INS综合导航系统",en:"INS Integrated Navigation System",full:"Integrated Navigation System",cnF:"综合船舶导航系统",def:"集成电子海图、雷达、定位、航行计划和船舶传感器信息的综合导航系统。",sc:"用于船舶驾驶台,实现航线规划、航行监控、雷达显示和多源导航数据融合。",mod:"INS综合导航系统"},
+{id:72,cat:"产品型号",cn:"电子海图",en:"ECDIS",full:"Electronic Chart Display and Information System",cnF:"电子海图显示与信息系统",def:"基于电子海图数据提供航线规划、航行监控和海图信息显示的船舶导航系统。",sc:"船员通过ECDIS进行航线设计、航线检查、目标监控和航行数据记录。",mod:"ECDIS电子海图"},
+{id:73,cat:"产品型号",cn:"航海雷达",en:"Marine Radar",full:"Marine Radar",cnF:"船舶导航雷达",def:"通过无线电波探测周边目标距离、方位和运动状态的船舶导航设备。",sc:"在昼夜和复杂天气条件下探测船舶、岸线及障碍物,辅助船舶安全航行。",mod:"航海雷达"},
+{id:74,cat:"平台功能",cn:"一站式基站管控",en:"One-stop Base Station Management",full:"One-stop Base Station Management",cnF:"统一基站管理",def:"在统一平台中完成多基站的接入、配置、监控、告警、升级和运维管理。",sc:"海事或港口客户通过一个管理平台集中管理多个岸基站点。",mod:"VDES/AIS基站管理系统"},
+{id:75,cat:"平台功能",cn:"图形化可视运维",en:"Graphical Visual Operations and Maintenance",full:"Graphical Visual Operations and Maintenance",cnF:"图形化可视化运维",def:"通过拓扑图、状态面板、曲线和告警图形展示系统运行状态的运维方式。",sc:"运维人员通过可视化界面查看基站连接、链路质量、故障和历史趋势。",mod:"VDES/AIS基站管理系统"},
+{id:76,cat:"平台功能",cn:"B/S轻量架构",en:"Lightweight Browser/Server Architecture",full:"Browser/Server Architecture",cnF:"浏览器/服务器轻量架构",def:"基于浏览器和服务器的系统架构,用户无需安装专用客户端即可访问系统。",sc:"客户通过浏览器访问基站管理平台,降低部署、升级和维护成本。",mod:"VDES/AIS基站管理系统"},
+{id:77,cat:"平台功能",cn:"多级多用户协同",en:"Multi-level Multi-user Collaboration",full:"Multi-level Multi-user Collaboration",cnF:"多组织层级协同",def:"支持不同组织层级、用户角色和权限范围协同使用系统。",sc:"省、市、港口或站点用户按权限查看数据、处理告警和执行运维任务。",mod:"VDES/AIS基站管理系统"},
+{id:78,cat:"测试技术",cn:"协议栈测试",en:"Protocol Stack Testing",full:"Protocol Stack Testing",cnF:"通信协议栈测试",def:"对通信协议从链路、网络到应用层的报文交互和协议实现进行验证。",sc:"测试系统验证VDES/AIS设备的报文格式、时序、信道行为和协议一致性。",mod:"AY-T20"},
+{id:79,cat:"测试技术",cn:"测试用例管理",en:"Test Case Management",full:"Test Case Management",cnF:"测试用例全生命周期管理",def:"对测试条件、步骤、预期结果、执行记录和版本进行统一管理。",sc:"研发人员建立不同产品和标准对应的测试用例,并追踪测试执行结果。",mod:"AY-T20"},
+{id:80,cat:"数据技术",cn:"多模态数据融合",en:"Multimodal Data Fusion",full:"Multimodal Data Fusion",cnF:"多源多模态数据融合",def:"对来自文本、图像、视频、轨迹、传感器和业务系统等不同模态的数据进行联合分析。",sc:"平台融合AIS轨迹、雷达目标、视频画面和气象数据,辅助识别海域异常行为。",mod:"海域监管数智平台"},
+{id:81,cat:"数据技术",cn:"数字孪生",en:"Digital Twin",full:"Digital Twin",cnF:"数字空间动态映射",def:"在数字空间构建与现实设备、系统或对象对应的动态模型,并保持状态关联。",sc:"在航天协同仿真或基站运维中,以数字模型映射真实设备状态和运行过程。",mod:"航天协同仿真平台 / 核心板卡配套软件"},
+{id:82,cat:"航海应用",cn:"航线规划",en:"Route Planning",full:"Route Planning",cnF:"船舶航线规划",def:"根据航行目标、海图、航道、气象和安全约束设计船舶航行路线。",sc:"船员在ECDIS中设计航线,并在航行前进行路线检查和安全评估。",mod:"ECDIS电子海图 / INS综合导航系统"},
+{id:83,cat:"航海应用",cn:"航线检查",en:"Route Check",full:"Route Check",cnF:"航行路线安全检查",def:"对计划航线中的浅水区、禁航区、危险物和其他航行风险进行自动检查。",sc:"航线提交前,ECDIS自动检查航线与海图安全边界的关系并提示风险。",mod:"ECDIS电子海图"},
+{id:84,cat:"雷达技术",cn:"小目标探测",en:"Small Target Detection",full:"Small Target Detection",cnF:"弱小目标探测",def:"在噪声、杂波或复杂海况下识别尺寸较小、回波较弱的目标。",sc:"航海雷达在近岸、夜间或恶劣天气中探测小型船舶和漂浮物。",mod:"航海雷达"},
+{id:85,cat:"雷达技术",cn:"多目标跟踪",en:"Multi-target Tracking",full:"Multi-target Tracking",cnF:"多船舶目标跟踪",def:"同时对多个目标进行检测、编号、位置更新和运动趋势分析。",sc:"雷达对多个船舶目标持续跟踪,并在显示界面中提供目标航向和速度信息。",mod:"航海雷达 / 海域监管数智平台"}
 ];
-const CATS=['all','协议标准','核心功能','技术参数','硬件接口'];
-const catN={all:'全部','协议标准':'协议标准','核心功能':'核心功能','技术参数':'技术参数','硬件接口':'硬件接口'};
+const CATS=['all','协议标准','核心功能','技术参数','硬件接口','业务术语','产品型号','平台功能','测试技术','数据技术','航海应用','雷达技术'];
+const catN={all:'全部','协议标准':'协议标准','核心功能':'核心功能','技术参数':'技术参数','硬件接口':'硬件接口','业务术语':'业务术语','产品型号':'产品型号','平台功能':'平台功能','测试技术':'测试技术','数据技术':'数据技术','航海应用':'航海应用','雷达技术':'雷达技术'};
 let st={mastery:{},curCat:'all'};
 function save(){try{localStorage.setItem('aohai_v3',JSON.stringify(st))}catch(e){}}
 function load(){try{const d=localStorage.getItem('aohai_v3');if(d)st=JSON.parse(d)}catch(e){}}
